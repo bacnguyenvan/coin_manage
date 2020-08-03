@@ -139,7 +139,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr class="xrp_coin">
                                         <td class="text-center text-muted">1</td>
                                         <td>
                                             <div class="widget-content p-0">
@@ -155,10 +155,10 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-center">6.782</td>
-                                        <td class="text-center">6.557</td>
+                                        <td class="text-center buyPrice">6.782</td>
+                                        <td class="text-center sellPrice">6.557</td>
                                         <td class="text-center">
-                                            <div class="badge badge-success">
+                                            <div class="badge badge-success profitCoin">
                                             +7.775</div>
                                         </td>
                                         <td class="text-center">
@@ -207,12 +207,35 @@
 
             function getMarket()
             {
+                var buyPrice = '';
+                var sellPrice = '';
+                var profit = '';
+
                 $.ajax({
                     url : '/getMarket',
                     method : 'get',
                     type : 'json',
-                    success : function(data){
-                        console.log(data);
+                    success : function(object){
+                        for(var item in object){
+                            var data = object[item];
+                            console.log(data);
+                            for(var item in data){
+                                if(data[item]['assetName'] == "XRP"){
+                                    buyPrice = data[item]['buyPrice'];
+                                    sellPrice = data[item]['sellPrice'];
+                                    profit = data[item]['change24h'];
+
+                                    break;
+                                }
+                            }
+                            
+                            
+                        }
+                      
+
+                        $(".buyPrice").text(buyPrice);
+                        $(".sellPrice").text(sellPrice);
+                        $(".profitCoin").text(profit);
                     }
                 });
             }
