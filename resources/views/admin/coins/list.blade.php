@@ -227,7 +227,7 @@
                                     $(".profitCoin").removeClass('profitCoin_red');
                                     $(".profitCoin").addClass('profitCoin_green');
                                 }else{
-                                    profit = "-" + profit;
+                                   
                                     $(".profitCoin").removeClass('profitCoin_green');
                                     $(".profitCoin").addClass('profitCoin_red');
                                 }
