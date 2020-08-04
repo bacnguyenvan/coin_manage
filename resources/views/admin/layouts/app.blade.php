@@ -11,6 +11,7 @@
         <meta name="msapplication-tap-highlight" content="no">
         
         <link href="css/main.css" rel="stylesheet">
+        @yield('css')
     </head>
     <body>
         <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">

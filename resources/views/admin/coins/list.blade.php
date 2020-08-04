@@ -155,11 +155,11 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-center buyPrice">6.782</td>
-                                        <td class="text-center sellPrice">6.557</td>
+                                        <td class="text-center buyPrice"></td>
+                                        <td class="text-center sellPrice"></td>
                                         <td class="text-center">
-                                            <div class="badge badge-success profitCoin">
-                                            +7.775</div>
+                                            <div class="profitCoin">
+                                            </div>
                                         </td>
                                         <td class="text-center">
                                             <button type="button" id="PopoverCustomT-4" class="btn btn-primary btn-sm">Transaction</button>
@@ -210,23 +210,28 @@
                 var buyPrice = '';
                 var sellPrice = '';
                 var profit = '';
-
+                var profit_class = ''
                 $.ajax({
                     url : '/getMarket',
                     method : 'get',
                     type : 'json',
-                    success : function(object){
-                        for(var item in object){
-                            var data = object[item];
-                            console.log(data);
-                            for(var item in data){
-                                if(data[item]['assetName'] == "XRP"){
-                                    buyPrice = data[item]['buyPrice'];
-                                    sellPrice = data[item]['sellPrice'];
-                                    profit = data[item]['change24h'];
-
-                                    break;
+                    success : function(data){
+                        for(var item in data){
+                            
+                            if(data[item].assetName == "XRP"){
+                                buyPrice = formatNumber(data[item].buyPrice);
+                                sellPrice = formatNumber(data[item].sellPrice);
+                                profit = data[item].change24h;
+                                if(parseInt(profit) > 0){
+                                    profit = "+" + profit;
+                                    $(".profitCoin").removeClass('profitCoin_red');
+                                    $(".profitCoin").addClass('profitCoin_green');
+                                }else{
+                                    profit = "-" + profit;
+                                    $(".profitCoin").removeClass('profitCoin_green');
+                                    $(".profitCoin").addClass('profitCoin_red');
                                 }
+                                break;
                             }
                             
                             
@@ -239,8 +244,30 @@
                     }
                 });
             }
-        })
+
+
+            function formatNumber(num) {
+              return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+            }
+
+        });
+
     </script>
+@endsection
+
+@section('css')
+    <style type="text/css">
+        .profitCoin{
+            font-weight: bold;
+           
+        }
+        .profitCoin_green{
+            color: green;
+        }
+        .profitCoin_red{
+           color: red; 
+        }
+    </style>
 @endsection
         
                 
