@@ -10,7 +10,7 @@
         <meta name="description" content="This is an example dashboard created using build-in elements and components.">
         <meta name="msapplication-tap-highlight" content="no">
         
-        <link href="css/main.css" rel="stylesheet">
+        <link href="{{asset('css/main.css')}}" rel="stylesheet">
         @yield('css')
     </head>
     <body>
@@ -63,7 +63,7 @@
                                         <div class="widget-content-left">
                                             <div class="btn-group">
                                                 <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                                    <img width="42" class="rounded-circle" src="assets/images/logo_coin.png" alt="">
+                                                    <img width="42" class="rounded-circle" src="{{asset('assets/images/logo_coin.png')}}" alt="">
                                                     <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                                 </a>
                                                 <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
@@ -437,11 +437,11 @@
 
                 @yield('content')
 
-                <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+                
             </div>
         </div>
 
-        <script src="login_assets/jquery/jquery-3.2.1.min.js"></script>
+        <script src="{{asset('login_assets/jquery/jquery-3.2.1.min.js')}}"></script>
         {{-- <script type="text/javascript" src="js/main.js"></script> --}}
         @yield('script')
     </body>

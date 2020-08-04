@@ -11,4 +11,9 @@ class CoinController extends Controller
     {
     	return view('admin.coins.list');
     }
+
+    public function transaction()
+    {
+    	return view('admin.coins.transaction');
+    }
 }
