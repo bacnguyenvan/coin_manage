@@ -22,13 +22,15 @@ class CoinController extends Controller
     	$list_buy = CoinBuy::getList($id);
     	$list_sell = CoinSell::getList($id);
     	$msg = '';
-        $nameCoin = Coin::find($id);
-        if(empty($nameCoin)) abort(404);
-
+        $coin_transaction = CoinTransaction::getCoinByPK($id);
+        if(empty($coin_transaction)) abort(404);
+        $coin = Coin::getCoinByPK($coin_transaction->coin_id);
+        if(empty($coin)) abort(404);
+        
     	$data = [
     		'list_buy' => $list_buy,
     		'list_sell' => $list_sell,
-            'name_coin' => $nameCoin->name_summary,
+            'name_coin' => $coin->name_summary,
             'transaction_id' => $id
     	];
 

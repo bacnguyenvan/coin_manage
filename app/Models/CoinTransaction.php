@@ -18,4 +18,11 @@ class CoinTransaction extends Model
 	    				->get();
 	    return $lists;
 	}
+	
+	static function getCoinByPK($id)
+    {
+    	return self::where('id',$id)
+    				->whereNull('deleted_at')
+    				->first();
+    }
 }

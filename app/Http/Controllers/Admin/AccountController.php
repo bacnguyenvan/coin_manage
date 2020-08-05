@@ -9,6 +9,6 @@ class AccountController extends Controller
 {
     public function list()
     {
-    	return view('admin.coins.list');
+    	return "SUCCESS";//view('admin.coins.list');
     }
 }

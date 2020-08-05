@@ -20,6 +20,7 @@ Route::group([
 
 	Route::get('/','Admin\AccountController@list')->name('accounts-list');
 	Route::get('/coin','Admin\CoinController@list')->name('coins-list');
+	Route::get('/coin/add','Admin\CoinController@add')->name('coins-add');
 
 	Route::match(['get','post'],'/coin/transaction/{id}','Admin\CoinController@transaction')->name('coins-transaction');
 

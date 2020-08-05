@@ -32,6 +32,11 @@ class LoginController extends Controller
     	return view('admin.pages.login');
     }
 
+    public function logout()
+    {
+        Auth::guard('admin')->logout();
+        return redirect()->route('admin-login');
+    }
     public function validateLogin($request)
     {
     	$request->validate([

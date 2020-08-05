@@ -70,7 +70,7 @@
                                                     
                                                     <button type="button" tabindex="0" class="dropdown-item">Settings</button>
                                                     
-                                                    <button type="button" tabindex="0" class="dropdown-item">Logout</button>
+                                                    <a href="{{route('admin-logout')}}" tabindex="0" class="dropdown-item">Logout</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -443,7 +443,7 @@
 
         <script src="{{asset('login_assets/jquery/jquery-3.2.1.min.js')}}"></script>
         <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
-
+        
         {{-- success --}}
          @if(session('success'))
         <div id="toast-container" class="toast-top-right">

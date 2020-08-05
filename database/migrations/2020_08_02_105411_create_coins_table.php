@@ -18,6 +18,9 @@ class CreateCoinsTable extends Migration
             $table->string('name')->nullable();
             $table->string('name_summary')->nullable();
             $table->string('image')->nullable();
+            $table->string('buy_market')->nullable();
+            $table->string('sell_market')->nullable();
+            $table->string('change24h')->nullable();
             $table->datetime('deleted_at')->nullable();
     
             $table->timestamps();

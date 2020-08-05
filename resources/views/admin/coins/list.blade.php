@@ -119,7 +119,7 @@
                         <div class="card-header">Coin list
                            <div class="btn-actions-pane-right">
                                 <div role="group" class="btn-group-sm btn-group">
-                                    <a href="" class="btn btn-success">
+                                    <a href="{{route('coins-add')}}" class="btn btn-success">
                                         <i class="fa fa-plus"></i>
                                     Create new coin
                                     </a>
@@ -199,7 +199,23 @@
 @endsection
 
 @section('script')
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+        <script>
+          window.OneSignal = window.OneSignal || [];
+          OneSignal.push(function() {
+            OneSignal.init({
+              appId: "4b8c2fa9-322e-4c55-957b-08c5e97aec2e",
+              
+                
+            });
+
+            //OneSignal.setDefaultTitle("SMARTNE VN");
+
+          });
+        </script>
+
     <script type="text/javascript">
+
         $(document).ready(function(){
 
             setInterval(function() {

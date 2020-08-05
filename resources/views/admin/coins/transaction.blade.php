@@ -143,7 +143,7 @@
                                                     <th>#</th>
                                                     <th>Date</th>
                                                     <th>Number</th>
-                                                    <th>Price</th>
+                                                    <th>Price ( 1 coin )</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
