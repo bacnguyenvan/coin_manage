@@ -16,6 +16,7 @@ class CreateCoinsTable extends Migration
         Schema::create('coins', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->nullable();
+            $table->string('name_summary')->nullable();
             $table->string('image')->nullable();
             $table->datetime('deleted_at')->nullable();
     

@@ -139,6 +139,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($list as $item)
                                     <tr class="xrp_coin">
                                         <td class="text-center text-muted">1</td>
                                         <td>
@@ -146,11 +147,11 @@
                                                 <div class="widget-content-wrapper">
                                                     <div class="widget-content-left mr-3">
                                                         <div class="widget-content-left">
-                                                        <img width="40" class="rounded-circle" src="assets/images/coin/xrp.png" alt=""></div>
+                                                        <img width="40" class="rounded-circle" src="assets/images/coin/{{$item->image}}" alt=""></div>
                                                     </div>
                                                     <div class="widget-content-left flex2">
-                                                        <div class="widget-heading">XRP</div>
-                                                        <div class="widget-subheading opacity-7">ripple</div>
+                                                        <div class="widget-heading">{{$item->name_summary}}</div>
+                                                        <div class="widget-subheading opacity-7">{{$item->name}}</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -162,10 +163,11 @@
                                             </div>
                                         </td>
                                         <td class="text-center">
-                                            <button type="button" id="PopoverCustomT-4" class="btn btn-primary btn-sm">Transaction</button>
+                                            <a href="{{route('coins-transaction',$item->id)}}"  id="PopoverCustomT-4" class="btn btn-primary btn-sm">Transaction</a>
                                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                                         </td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

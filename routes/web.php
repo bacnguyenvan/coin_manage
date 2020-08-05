@@ -21,10 +21,13 @@ Route::group([
 	Route::get('/','Admin\AccountController@list')->name('accounts-list');
 	Route::get('/coin','Admin\CoinController@list')->name('coins-list');
 
-	Route::match(['get','post'],'/coin/transaction','Admin\CoinController@transaction')->name('coins-transaction');
+	Route::match(['get','post'],'/coin/transaction/{id}','Admin\CoinController@transaction')->name('coins-transaction');
 
 	// ajax
 
 	Route::get('/getMarket','APIs\ApiController@getMarket')->name('get-market');
+
+	Route::post('/addCoinSell','Admin\CoinController@addCoinSell');
+
 
 });

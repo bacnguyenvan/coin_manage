@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCoinSellTable extends Migration
+class CreateCoinTransactionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateCoinSellTable extends Migration
      */
     public function up()
     {
-        Schema::create('coin_sell', function (Blueprint $table) {
+        Schema::create('coin_transaction', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('transaction_id')->nullable();
             $table->bigInteger('user_id')->nullable();
-            $table->string('sell_price')->nullable();
-            $table->string('number')->nullable();
-            $table->datetime('date_transaction')->nullable();
+            $table->bigInteger('coin_id')->nullable();
             $table->datetime('deleted_at')->nullable();
             $table->timestamps();
         });
@@ -32,6 +29,6 @@ class CreateCoinSellTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('coin_sell');
+        Schema::dropIfExists('coin_transaction');
     }
 }

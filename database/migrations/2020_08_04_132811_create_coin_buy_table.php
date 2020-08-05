@@ -15,7 +15,7 @@ class CreateCoinBuyTable extends Migration
     {
         Schema::create('coin_buy', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('coin_id')->nullable();
+            $table->bigInteger('transaction_id')->nullable();
             $table->bigInteger('user_id')->nullable();
             $table->string('buy_price')->nullable();
             $table->string('number')->nullable();
