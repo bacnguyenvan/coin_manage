@@ -200,20 +200,18 @@
 
 @section('script')
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-        <script>
-          window.OneSignal = window.OneSignal || [];
-          OneSignal.push(function() {
-            OneSignal.init({
-              appId: "4b8c2fa9-322e-4c55-957b-08c5e97aec2e",
-              
-                
-            });
-
-            //OneSignal.setDefaultTitle("SMARTNE VN");
-
-          });
-        </script>
-
+    <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "7182ed94-e2ce-4230-9912-2d96828f4cd0",
+          notifyButton: {
+            enable: true,
+          },
+        });
+      });
+    </script>
+    
     <script type="text/javascript">
 
         $(document).ready(function(){
