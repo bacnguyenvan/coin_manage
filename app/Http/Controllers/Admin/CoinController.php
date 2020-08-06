@@ -19,6 +19,7 @@ class CoinController extends Controller
 
     public function transaction(Request $request,$id)
     {
+    
     	$list_buy = CoinBuy::getList($id);
     	$list_sell = CoinSell::getList($id);
     	$msg = '';

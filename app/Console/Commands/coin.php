@@ -37,13 +37,32 @@ class coin extends Command
      */
     public function handle()
     {
+        // get coin market
+        $url = "https://vicuta.com/api/getMarket";
+        $opts = array('http'=>array('header' => "User-Agent:MyAgent/1.0\r\n")); 
+        //Basically adding headers to the request
+        $context = stream_context_create($opts);
+        $html = file_get_contents($url,true,$context);
+        $result = json_decode($html);
+        $buy = 0;
+        $sell = 0;
+
+        foreach($result as $item){
+            if($item->assetName == "XRP"){
+                $buy = number_format($item->buyPrice);
+                $sell = number_format($item->sellPrice);
+                break;
+            }
+        }
+
+        // notification
         $now = date('d/m/Y H:i:s');
 
         $heading      = array(
         "en" => 'XRP coin '.$now
         );
         $content      = array(
-        "en" => 'Buy: 4.789'.' / Sell: 4.665'
+        "en" => 'Buy: '.$buy.' / Sell: '.$sell
         );
         $hashes_array = array();
         array_push($hashes_array, array(

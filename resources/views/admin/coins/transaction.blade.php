@@ -224,7 +224,7 @@
                                                     ?>
                                                         <b style="color: green">+{{number_format($profit)}}</b>
                                                     <?php }else{ ?>
-                                                        <b style="color: red">-{{number_format($profit)}}</b>
+                                                        <b style="color: red">{{number_format($profit)}}</b>
                                                     <?php  } ?>
                                                 </p>
                                             </div>
