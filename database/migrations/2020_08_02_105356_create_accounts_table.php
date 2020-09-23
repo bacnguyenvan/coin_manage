@@ -17,6 +17,11 @@ class CreateAccountsTable extends Migration
             $table->bigIncrements('id');
             $table->string('email')->nullable();
             $table->string('password')->nullable();
+
+            $table->string('name')->nullable();
+            $table->string('google_id')->nullable();
+            $table->string('facebook_id')->nullable();
+            $table->string('image')->nullable();
             $table->string('account_type')->nullable();
             $table->datetime('deleted_at')->nullable();
             $table->timestamps();

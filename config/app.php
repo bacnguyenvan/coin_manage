@@ -176,6 +176,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         Ladumor\OneSignal\OneSignalServiceProvider::class,
 
+        Laravel\Socialite\SocialiteServiceProvider::class,
+
     ],
 
     /*
@@ -227,6 +229,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'OneSignal' => \Ladumor\OneSignal\OneSignal::class,
+
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 

@@ -119,7 +119,7 @@
                         <div class="card-header">Coin list
                            <div class="btn-actions-pane-right">
                                 <div role="group" class="btn-group-sm btn-group">
-                                    <a href="{{route('coins-add')}}" class="btn btn-success">
+                                    <a href="#" class="btn btn-success">
                                         <i class="fa fa-plus"></i>
                                     Create new coin
                                     </a>
@@ -199,6 +199,7 @@
 @endsection
 
 @section('script')
+
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
     <script>
       window.OneSignal = window.OneSignal || [];
@@ -215,11 +216,15 @@
     <script type="text/javascript">
 
         $(document).ready(function(){
-
+            if (window.location.hash  &&  window.location.hash == '#_=_' )  {
+                history.replaceState 
+                ? history.replaceState(null, null, window.location.href.split("#")[0])
+                : window.location.hash = "";
+            }
             setInterval(function() {
                 
                 getMarket();
-            },10000); 
+            },5000); 
 
             function getMarket()
             {
@@ -238,7 +243,7 @@
                                 buyPrice = formatNumber(data[item].buyPrice);
                                 sellPrice = formatNumber(data[item].sellPrice);
                                 profit = data[item].change24h;
-                                if(parseInt(profit) > 0){
+                                if(parseFloat(profit) > 0){
                                     profit = "+" + profit;
                                     $(".profitCoin").removeClass('profitCoin_red');
                                     $(".profitCoin").addClass('profitCoin_green');

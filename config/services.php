@@ -34,4 +34,17 @@ return [
         'secret' => env('SPARKPOST_SECRET'),
     ],
 
+    'google' => [
+        'client_id' => '118157067994-m8incgtoervhlnak96dlqfhlold0d40n.apps.googleusercontent.com',
+        'client_secret' => 'ZaFxmHBwKh78TCHh8Qb80_x9',
+        'redirect' => 'https://8a1c38c0e0a5.ngrok.io/auth/google/callback',
+    ],
+
+    'facebook' => [
+        'client_id' => "266527214761388",
+        'client_secret' => "c4c07cb84984a2f6f6ed094eff64125e",
+        'redirect' => 'https://8a1c38c0e0a5.ngrok.io/auth/facebook/callback',
+    ],
+
+
 ];
