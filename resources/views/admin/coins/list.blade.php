@@ -205,7 +205,7 @@
       window.OneSignal = window.OneSignal || [];
       OneSignal.push(function() {
         OneSignal.init({
-          appId: env("ONESIGNAL_APP_ID"),
+          appId: "{{config("app_config.ONESIGNAL_APP_ID")}}",
           notifyButton: {
             enable: true,
           },
@@ -225,8 +225,8 @@
             }
             setInterval(function() {
                 
-               // getMarket();
-            },5000); 
+               getMarket();
+            },6000); 
 
             function getMarket()
             {

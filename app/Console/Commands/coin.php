@@ -69,11 +69,11 @@ class coin extends Command
             "id" => "like-button",
             "text" => "View detail",
             // "icon" => "http://i.imgur.com/N8SN8ZS.png",
-            "url" => env("ONESIGNAL_APP_URL")
+            "url" => config("app_config.ONESIGNAL_APP_URL")
         ));
     
         $fields = array(
-            'app_id' => env("ONESIGNAL_APP_ID"),
+            'app_id' => config("app_config.ONESIGNAL_APP_ID"),
             'included_segments' => array(
                 'All'
             ),
@@ -93,7 +93,7 @@ class coin extends Command
         curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
             'Content-Type: application/json; charset=utf-8',
-            'Authorization: Basic '.env("ONESIGNAL_APP_AUTHORIZE")
+            'Authorization: Basic '.config("app_config.ONESIGNAL_APP_AUTHORIZE")
         ));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($ch, CURLOPT_HEADER, FALSE);
