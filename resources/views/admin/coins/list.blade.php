@@ -208,8 +208,7 @@
           appId: "{{config("app_config.ONESIGNAL_APP_ID")}}",
           notifyButton: {
             enable: true,
-          },
-          subdomainName: "45-124-95",
+          }
         });
       });
     </script>
