@@ -25,7 +25,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('command:coin')
-                 ->everyFiveMinutes()
+                 ->dailyAt('7:10')
                  ->withoutOverlapping();
     }
 
