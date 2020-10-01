@@ -13,7 +13,6 @@ class CoinController extends Controller
 {
     public function list()
     {
-        dd( config('app_config.ONESIGNAL_APP_ID') );
         $list = CoinTransaction::getList();
     	return view('admin.coins.list',['list' => $list]);
     }
