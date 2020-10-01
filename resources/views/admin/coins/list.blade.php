@@ -205,14 +205,16 @@
       window.OneSignal = window.OneSignal || [];
       OneSignal.push(function() {
         OneSignal.init({
-          appId: "7182ed94-e2ce-4230-9912-2d96828f4cd0",
+          appId: env("ONESIGNAL_APP_ID"),
           notifyButton: {
             enable: true,
           },
+          subdomainName: "45-124-95",
         });
       });
     </script>
     
+
     <script type="text/javascript">
 
         $(document).ready(function(){
@@ -223,7 +225,7 @@
             }
             setInterval(function() {
                 
-                getMarket();
+               // getMarket();
             },5000); 
 
             function getMarket()
