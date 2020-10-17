@@ -35,7 +35,7 @@ return [
     ],
 
     'google' => [
-        'client_id' => '118157067994-0dd28ljg3o6tbu02e4mk8gdt38lt4dlg.apps.googleusercontent.com',
+        'client_id' => '118157067994-0dd28ljg3o6tbu02e4mk8gdt38lt4dlg.apps.googleusercontent.com', 
         'client_secret' => 'KVlZfVLgL8pTez8TSSjbu9Yh',
         'redirect' => 'http://ec2-18-217-151-176.us-east-2.compute.amazonaws.com/auth/google/callback',
     ],
