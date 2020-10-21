@@ -15,17 +15,17 @@ class CoinController extends Controller
 {
     public function list()
     {
-        $aws = AWS::createClient('sns');
-        $aws->public([
-            'MessageAttributes' => [
-                'AWS.SNS.SMS.SMSType' => [
-                    'DateType' => 'String',
-                    'StringValue' => 'Transactional'
-                ]
-            ],
-            'Message' => 'Hello backmt',
-            'PhoneNumber' => '+84347091952'
-        ]);
+        // $aws = AWS::createClient('sns');
+        // $aws->public([
+        //     'MessageAttributes' => [
+        //         'AWS.SNS.SMS.SMSType' => [
+        //             'DateType' => 'String',
+        //             'StringValue' => 'Transactional'
+        //         ]
+        //     ],
+        //     'Message' => 'Hello backmt',
+        //     'PhoneNumber' => '+84347091952'
+        // ]);
 
         $list = CoinTransaction::getList();
     	return view('admin.coins.list',['list' => $list]);
