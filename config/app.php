@@ -177,6 +177,7 @@ return [
         Ladumor\OneSignal\OneSignalServiceProvider::class,
 
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Aws\Laravel\AwsServiceProvider::class,
 
     ],
 
@@ -231,7 +232,7 @@ return [
         'OneSignal' => \Ladumor\OneSignal\OneSignal::class,
 
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-
+        'AWS' => Aws\Laravel\AwsFacade::class,
     ],
 
 ];
