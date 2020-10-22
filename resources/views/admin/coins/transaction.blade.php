@@ -68,6 +68,7 @@
                                                     <th>Date</th>
                                                     <th>Number</th>
                                                     <th>Price ( 1 coin )</th>
+                                                    <th>Status</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -82,11 +83,16 @@
                                                     $total_number_buy += $item->number;
                                                     $total_buy_price += ($item->number)*($item->buy_price);
                                                  ?>
-                                                <tr>
+                                                <tr class="{{!empty($item->status)?'sold-background':''}}">
                                                     <th scope="row">{{$key}}</th>
                                                     <td>{{$item->date_transaction}}</td>
                                                     <td>{{$item->number}}</td>
                                                     <td>{{number_format($item->buy_price)}}</td>
+                                                    <td>
+                                                        <a href="{{route('update-transaction',$item->id)}}" class="btn {{!empty($item->status)?'btn-warning':'btn-success'}}">
+
+                                                            {{!empty($item->status)?'Sold':'Sell'}}</a>
+                                                    </td>
                                                 </tr>
                                                 @endforeach
                                                 
@@ -310,6 +316,9 @@
     <style type="text/css">
         .add_form_buy_coin,.add_form_sell_coin,.message_save{
             display: none;
+        }
+        .sold-background{
+            background: #ffff002e;
         }
     </style>
     

@@ -9,6 +9,8 @@ class CoinBuy extends Model
 {
     protected $table = 'coin_buy';
 
+    protected $fillable = ['status'];
+
     static public function getList($id)
     {
     	$lists = self::where('user_id',Auth::guard('admin')->id())

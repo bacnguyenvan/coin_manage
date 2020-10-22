@@ -23,6 +23,7 @@ Route::group([
 	Route::get('/coin/add','Admin\CoinController@add')->name('coins-add');
 
 	Route::match(['get','post'],'/coin/transaction/{id}','Admin\CoinController@transaction')->name('coins-transaction');
+	Route::get('/update-transaction/{id}','Admin\CoinController@updateTransaction')->name('update-transaction');
 
 	// ajax
 

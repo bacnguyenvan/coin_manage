@@ -63,6 +63,18 @@ class CoinController extends Controller
     	return view('admin.coins.transaction',$data);
     }
 
+    public function updateTransaction($id)
+    {
+        $coin_buy = CoinBuy::findorfail($id);
+        $status = $coin_buy->status;
+        $status = ($status)?0:1;
+        $coin_buy->update([
+            'status' => $status
+        ]);
+
+        return redirect()->back()->with('success','update transation coin success !');
+    }
+
     public function addCoinSell(Request $request)
     {
         $data = [
