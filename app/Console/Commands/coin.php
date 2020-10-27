@@ -37,6 +37,8 @@ class coin extends Command
      */
     public function handle()
     {
+        \Log::info(date('Y-m-d H:i:s')." crontab command:coin success");
+
         // get coin market
         $url = "https://vicuta.com/api/getMarket";
         $opts = array('http'=>array('header' => "User-Agent:MyAgent/1.0\r\n")); 
