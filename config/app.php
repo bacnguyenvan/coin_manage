@@ -178,7 +178,7 @@ return [
 
         Laravel\Socialite\SocialiteServiceProvider::class,
         Aws\Laravel\AwsServiceProvider::class,
-
+        Laravel\Passport\PassportServiceProvider::class
     ],
 
     /*
